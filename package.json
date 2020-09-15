@@ -1,0 +1,16 @@
+{
+  "name": "bmcal",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "deploy": "gh-pages -d dist"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://ehini2e.github.io/bmcal",
+  "dependencies": {
+    "gh-pages": "^3.1.0"
+  }
+}
