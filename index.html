@@ -31,12 +31,16 @@
                 <div class="card card-body text-center mt-5">
                     <h1 class="heading display-5 pb-3"> Building Material Calculator </h1>
                     <h3>*Concrete Calculation</h3>
+                    <h6>
+                        Note: <br>
+                            Volume of 1 Bag of Cement = 0.035 <br>
+                    </h6>
                     <form id="loan-form">
                             <h6>Mix ratio</h6>
                         <div class="form-group">
                             <div class="input-group">
                                 <span class="input-group-addon"></span>
-                                <input type="number" class="form-control" id="xn" 
+                                <input type="number" step="any" class="form-control" id="xn" 
                                 placeholder="cement">
                                 
                             </div>
@@ -45,7 +49,7 @@
                         <div class="form-group">
                             <div class="input-group">
                                 <span class="input-group-addon"></span>
-                                <input type="number" class="form-control" id="yn" 
+                                <input type="number" step="any" class="form-control" id="yn" 
                                 placeholder="fine aggregate">
                                 
                             </div>
@@ -53,12 +57,13 @@
                         <div class="form-group">
                             <div class="input-group">
                                 <span class="input-group-addon"></span>
-                                <input type="number" class="form-control" id="zn" 
+                                <input type="number" step="any" class="form-control" id="zn" 
                                 placeholder="coarse aggregate">
                                 
                             </div>
                         </div>
                         
+                        <h6>Volume of Element</h6>
                         <div class="form-group">
                             <div class="input-group">
                                 <span class="input-group-addon"></span>
@@ -67,6 +72,8 @@
                                 
                             </div>
                         </div>
+
+                        <!--
                         
                         <div class="form-group">
                             <div class="input-group">
@@ -90,7 +97,66 @@
                             <div class="input-group">
                                 <span class="input-group-addon">vol of coarse agg.</span>
                                 <input type="number"  step="any" class="form-control" id="vog" 
-                                placeholder="3.8 for 5tons">
+                                placeholder="3.8 ">
+                                
+                            </div>
+                        </div>
+                        -->
+
+                        <div class="form-group">
+                            <input type="submit" value="Calculate" class="btn btn-dark btn-block">
+                        </div>
+                    </form>
+
+                     <!--RESULTS-->
+                     <div id="results" class="pt-2">
+                        <h3>Results</h3>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon">no of bags</span>
+                                <input type="number" class="form-control" id="nob" 
+                                disabled>
+                                
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon">vol of fine agg</span>
+                                <input type="number" class="form-control" id="vosand" 
+                                disabled>
+                                
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon">tonnage of coarse agg</span>
+                                <input type="number" class="form-control" id="togranite" 
+                                disabled>
+                                
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3>To Calculate quantity per Trip</h3>
+
+                    <form id="loan-form1">
+                        
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon">vol of fine agg per unit</span>
+                                <input type="number"  step="any" class="form-control" id="vos" 
+                                placeholder=" ">
+                                
+                            </div>
+                        </div>
+                    
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon">vol of coarse agg per unit</span>
+                                <input type="number"  step="any" class="form-control" id="vog" 
+                                placeholder=" ">
                                 
                             </div>
                         </div>
@@ -98,7 +164,9 @@
                             <input type="submit" value="Calculate" class="btn btn-dark btn-block">
                         </div>
                     </form>
+                   
 
+                    
                     <!--
                     <div id="loading">
                         <img src="img/loading.gif.jpg" alt="">
@@ -108,17 +176,10 @@
                     <!--RESULTS-->
                     <div id="results" class="pt-2">
                     <h3>Results</h3>
-                    <div class="form-group">
-                        <div class="input-group">
-                            <span class="input-group-addon">No of Bags</span>
-                            <input type="number" class="form-control" id="nob" 
-                            disabled>
-                            
-                        </div>
-                    </div>
+                    
                     <div class="form-group">
                             <div class="input-group">
-                                <span class="input-group-addon">Stip of Sand</span>
+                                <span class="input-group-addon">trip of Sand</span>
                                 <input type="number" class="form-control" id="sos" 
                                 disabled>
                                 
@@ -126,13 +187,15 @@
                         </div>
                         <div class="form-group">
                                 <div class="input-group">
-                                    <span class="input-group-addon">Strip of Granite</span>
+                                    <span class="input-group-addon">trip of Granite</span>
                                     <input type="number" class="form-control" id="sog" 
                                     disabled>
                                     
                                 </div>
                             </div>
                         </div>
+                        
+                        <hr>
 
                               <!--Block Calculation-->
                               <div class="pt-4">
@@ -212,7 +275,7 @@
                             </div>
                         </div>
                     </div>
-
+                    <hr>
                           <!--plastering calculation-->
                           <div class="pt-4">
                           <h3>*Plastering Calculation</h3>
@@ -236,6 +299,7 @@
                             </div>
                         </div>
 
+                        <h6>Volume of Element</h6>
                         <div class="form-group">
                             <div class="input-group">
                                 <span class="input-group-addon"></span>
@@ -245,6 +309,8 @@
                             </div>
                         </div>
                         
+                        <!--
+
                         <div class="form-group">
                             <div class="input-group">
                                 <span class="input-group-addon">vol of cement</span>
@@ -263,11 +329,14 @@
                             </div>
                         </div>
 
+                        -->
+
                         <div class="form-group">
                             <input type="submit" value="Calculate" class="btn btn-dark btn-block">
                         </div>
                     </form>
                 </div>
+                
                         <!--RESULTS-->
                     <div id="results" class="pt-2">
                         <h3>Results</h3>
@@ -281,7 +350,7 @@
                         </div>
                         <div class="form-group">
                                 <div class="input-group">
-                                    <span class="input-group-addon">Strip of Sand</span>
+                                    <span class="input-group-addon">vol of fine agg</span>
                                     <input type="number" class="form-control" id="psos" 
                                     disabled>
                                     
@@ -289,6 +358,36 @@
                             </div>
                         </div>
 
+                        <h3>To Calculate quantity per Trip</h3>
+
+                        <form id="loan-form5">
+                            
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon">vol of sand</span>
+                                    <input type="number"  step="any" class="form-control" id="ppvos" 
+                                    placeholder="">
+                                    
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" value="Calculate" class="btn btn-dark btn-block">
+                            </div>
+                        </form>
+
+                         <!--RESULTS-->
+                    <div id="results" class="pt-2">
+                        <h3>Results</h3>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon">trip of sand</span>
+                                <input type="number" class="form-control" id="pptos" 
+                                disabled>
+                                
+                            </div>
+                        </div>
+
+                        <hr>
                          <!--Roof Calculation-->
                          <div class="pt-4">
                          <h3>*Roof Calculation</h3>
@@ -386,6 +485,14 @@
 
                             <div class="form-group">
                                 <div class="input-group">
+                                    <span class="input-group-addon">No of strut</span>
+                                    <input type="number" class="form-control" id="nost" 
+                                    disabled>          
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="input-group">
                                     <span class="input-group-addon">No of rafters</span>
                                     <input type="number" class="form-control" id="norft" 
                                     disabled>          
@@ -409,6 +516,22 @@
                             </div>
                         </div>
 
+                        <h6>
+                            Note: <br>
+                                Noggins   = 2" by 2" or 50mm by 50mm <br>
+                                wallplate = 3" by 4" or 75mm by 100mm <br>
+                                Facial    = 1" by 12" or 25mm by 300mm <br>
+                                Tie Beam  = 2" by 6" or 50mm by 150mm <br>
+                                Strut     = 3" by 4" or 75mm by 100mm <br>
+                                Rafters   = 3" by 4" or 75mm by 100mm <br>
+                                Purlins   = 2" by 3" or 50mm by 75mm <br>
+                                kingposts = 2" by 6" or 50mm by 150mm <br>
+                        </h6>
+                        <h5>
+                            For assistance <br>
+                            Email: momohsunday66@gmail.com <br>
+                            Tel: 08154960259
+                        </h5>
                         <div class="pt-4">
                         <h3>ehini2e tech.</h3>
                     </div>
