@@ -1,8 +1,10 @@
 // Listen for submit
 document.getElementById('loan-form').addEventListener('submit', calculateResults);
+document.getElementById('loan-form1').addEventListener('submit', calculateResults);
 document.getElementById('loan-form2').addEventListener('submit', calculateResults);
 document.getElementById('loan-form3').addEventListener('submit', calculateResults);
 document.getElementById('loan-form4').addEventListener('submit', calculateResults);
+document.getElementById('loan-form5').addEventListener('submit', calculateResults);
 // Calculate Results
 function calculateResults(e){
     console.log('caculating...');
@@ -11,10 +13,15 @@ function calculateResults(e){
     const yn = document.getElementById('yn');
     const zn = document.getElementById('zn');
     const voe = document.getElementById('voe');
+
+    const nob = document.getElementById('nob');
+    const vosand = document.getElementById('vosand');
+    const togranite = document.getElementById('togranite');
+
     const voc = document.getElementById('voc');
     const vos = document.getElementById('vos');
     const vog = document.getElementById('vog');
-    const nob = document.getElementById('nob');
+    
     const sos = document.getElementById('sos');
     const sog = document.getElementById('sog');
 
@@ -40,7 +47,11 @@ function calculateResults(e){
 
     console.log(volBeam);
 
-    nob.value = (volBeam * xn.value) / (voc.value);
+    nob.value = (volBeam * xn.value) / 0.035;
+    vosand.value = (volBeam * yn.value);
+    togranite.value = (volBeam * zn.value * 1.68);
+
+    
     sos.value = (volBeam * yn.value) / (vos.value);
     sog.value = (volBeam * zn.value) / (vog.value);
 
@@ -70,15 +81,18 @@ function calculateResults(e){
     const pvoe = document.getElementById('pvoe');
     const pvoc = document.getElementById('pvoc');
     const pvos = document.getElementById('pvos');
+    const ppvos = document.getElementById('ppvos');
     const pnob = document.getElementById('pnob');
     const psos = document.getElementById('psos');
+    const pptos = document.getElementById('pptos');
 
     const puuu = Number(pxn.value);
     const pnnn = Number(pvn.value);
-    const ptMix = puuu + pnnn
+    const ptMix = puuu + pnnn;
     const pvolBeam = (pvoe.value) / (ptMix);
-    pnob.value = (pvolBeam * pxn.value) / (pvoc.value);
-    psos.value = (pvolBeam * pvn.value) / (pvos.value);
+    pnob.value = (pvolBeam * pxn.value) / 0.035;
+    psos.value = (pvolBeam * pvn.value);
+    pptos.value = (pvolBeam * pvn.value) / (ppvos.value);
 
 
     //roof
@@ -92,6 +106,7 @@ function calculateResults(e){
     const nowp = document.getElementById('nowp');
     const nofb = document.getElementById('nofb');
     const notb = document.getElementById('notb');
+    const nost = document.getElementById('nost');
     const norft = document.getElementById('norft');
     const nopurlins = document.getElementById('nopurlins');
     const noking = document.getElementById('noking');
@@ -122,6 +137,9 @@ function calculateResults(e){
     const toh1 = (tl / toverhang) * Number(wofp.value);
     notb.value = toh1 / 3.6;
     console.log(notb.value);
+
+    //strut
+    nost.value = notb.value * 2
 
     //rafter
     const halftw = tw / 2;
