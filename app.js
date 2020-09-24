@@ -33,6 +33,7 @@ function calculateResults(e){
     const now = document.getElementById('now');
     const tol1 = document.getElementById('tol1');
     const tob1 = document.getElementById('tob1');
+    const tsa = document.getElementById('tsa');
 
     
     const uuu = Number(xn.value);
@@ -43,7 +44,7 @@ function calculateResults(e){
 
    // const tMix = xn.value + yn.value + zn.value;
     console.log(tMix);
-    const volBeam = (voe.value) / (tMix);
+    const volBeam = (voe.value * 1.54) / (tMix);
 
     console.log(volBeam);
 
@@ -66,13 +67,19 @@ function calculateResults(e){
     const topenings = nodoor + nowindow + nopenings;
     console.log(topenings);
 
-    
+    const ttsa = tsa.value / 0.10125
 
-    if(nod.value == '' && now.value == '' && tol1.value == '' && tob1.value == ''){
+    if(nod.value == '' && now.value == '' && tol1.value == '' && tob1.value == '' && tsa.value == ''){
         nob1.value = nobl
-    }else {
+    }else if(nod.value !== '' && now.value !== '' && tol1.value !== '' && tob1.value !== '' && tsa.value == '') {
         nob1.value = nobl - topenings;
-    }
+    };
+
+    if(tsa !=="" && nod.value == '' && now.value == '' && tol1.value == '' && tob1.value == '' && noc.value =='' && tol.value == ''){
+        nob1.value = ttsa
+    }else if(tsa !=="" && nod.value !== '' && now.value !== '' && tol1.value !== '' && tob1.value !== '' && noc.value =='' && tol.value == ''){
+        nob1.value = ttsa - topenings;
+    };
 
 
     //plastering
@@ -89,7 +96,7 @@ function calculateResults(e){
     const puuu = Number(pxn.value);
     const pnnn = Number(pvn.value);
     const ptMix = puuu + pnnn;
-    const pvolBeam = (pvoe.value) / (ptMix);
+    const pvolBeam = (pvoe.value * 1.54) / (ptMix);
     pnob.value = (pvolBeam * pxn.value) / 0.035;
     psos.value = (pvolBeam * pvn.value);
     pptos.value = (pvolBeam * pvn.value) / (ppvos.value);
